@@ -1,18 +1,15 @@
+import 'dart:io';
+
 void main(List<String> args) {
   // var worker = Worker("Ariet", "Egemberdiev", 50, 30);
   // worker.getSalary();
-  var string = Mystring();
+  // var string = Mystring();
   // string.reverse("Ariet");
   // print(string.ucFirst("arfsrg"));
-  print(string.ucWord("adfgsdf afsdg asgsfd"));
+  // print(string.ucWord("adfgsdf afsdg asgsfd"));
+  // var emails = Validator();
+  // emails.isEmail("egemberdievariet@gmail.com");
 }
-
-/*Реализуйте класс Worker (Работник), который будет иметь
-следующие свойства: name (имя), surname (фамилия), rate (ставка за
-день работы), days (количество отработанных дней). Также класс
-должен иметь метод getSalary(), который будет выводить зарплату
-работника. Зарплата - это произведение (умножение) ставки rate на
-количество отработанных дней days.*/
 
 class Worker {
   String? name;
@@ -27,12 +24,6 @@ class Worker {
     print("$name $surname gets \$${salary} monthly");
   }
 }
-/*Реализуйте класс MyString, который будет иметь следующие
-методы: метод reverse(), который параметром принимает строку, а
-возвращает ее в перевернутом виде, метод ucFirst(), который
-параметром принимает строку, а возвращает эту же строку, сделав ее
-первую букву заглавной и метод ucWords, который принимает строку и
-делает заглавной первую букву каждого слова этой строки.*/
 
 class Mystring {
   void reverse(String a) {
@@ -51,5 +42,13 @@ class Mystring {
         .map((e) => e[0].toUpperCase() + e.substring(1))
         .toList()
         .join(" ");
+  }
+}
+
+class Validator {
+  void isEmail(String email) {
+    // var enteredEmail = stdin.readLineSync();
+    bool emailValid = RegExp("@").hasMatch(email);
+    print(emailValid);
   }
 }
